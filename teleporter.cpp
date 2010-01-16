@@ -22,7 +22,6 @@ player->ADD_GOSSIP_ITEM( 0, "Gurubashi Arena" , GOSSIP_SENDER_MAIN, 6);
 player->ADD_GOSSIP_ITEM( 0, "Nordend" , GOSSIP_SENDER_MAIN, 84);
 player->ADD_GOSSIP_ITEM( 0, "Scherbenwelt" , GOSSIP_SENDER_MAIN, 85);
 player->ADD_GOSSIP_ITEM( 0, "Azeroth" , GOSSIP_SENDER_MAIN, 86);
-player->ADD_GOSSIP_ITEM( 5, "Playertreff" , GOSSIP_SENDER_MAIN, 600);
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
 player->ADD_GOSSIP_ITEM( 0, "Teleporter by Tornado, Updated by SNowi" , GOSSIP_SENDER_MAIN, 601);
 player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
@@ -1002,14 +1001,6 @@ player->TeleportTo(530, -3362.219971f, 4660.410156f, -101.049004f,0.0f);
 
 break;
 
-case 53:
-
-player->CLOSE_GOSSIP_MENU();
-player->TeleportTo(530, -3645.060059f, 4943.620117f, -101.047997f,0.0f);
-
-
-break;
-
 case 54:
 
 player->CLOSE_GOSSIP_MENU();
@@ -1206,31 +1197,9 @@ player->ADD_GOSSIP_ITEM( 5, "Scherbenwelt Instanzen" , GOSSIP_SENDER_MAIN, 4);
 player->ADD_GOSSIP_ITEM( 5, "Scherbenwelt Raids" , GOSSIP_SENDER_MAIN, 5);
 player->ADD_GOSSIP_ITEM( 5, "Gurubashi Arena" , GOSSIP_SENDER_MAIN, 6);
 player->ADD_GOSSIP_ITEM( 5, "Nordend" , GOSSIP_SENDER_MAIN, 84);
-player->ADD_GOSSIP_ITEM( 5, "Playertreff" , GOSSIP_SENDER_MAIN, 600);
 
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
 player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
-
-
-break;
-
-case 600: 
-if (player->GetTeam() == ALLIANCE )
-{
-
-player->CLOSE_GOSSIP_MENU();
-player->TeleportTo(1, -11394.800000f, -4699.590000f, 5.977820f, 2.587900f);
-player->GetSession()->SendNotification("Fuer die Allianz!");
-}
-else
-{
-	
-player->CLOSE_GOSSIP_MENU();
-player->TeleportTo(1, -11856.000000f, -4759.160000f, 6.204370f, 0.302364f);
-player->GetSession()->SendNotification("Fuer die Horde!");
-}
-break;
-}
 
 
 }
