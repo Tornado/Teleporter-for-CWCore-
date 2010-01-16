@@ -6,7 +6,15 @@
 // Grundversion Coded by Tornado
 // Scherbenwelt + Azeroth Coded by SNowi
 // All WOTLK Teleports
-// Umgeschrieben für Trinity!
+// Umgeschrieben fuer Trinity!
+
+/*English: ground coded by tornado
+tbc and classic added by SNowi
+All wotlk ports added by tornado
+coded for trinity*/
+
+/*Report the Bugs pls under
+http://easy-emu.de */
 
 
 bool GossipHello_teleporter(Player *player, Creature *_Creature)
