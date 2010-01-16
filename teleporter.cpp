@@ -40,6 +40,7 @@ return true;
 
 }
 
+
 void SendDefaultMenu_teleporter(Player *player, Creature *_Creature, uint32 action )
 {
      // Wenn der Spieler in einen Kampf verwickelt wird.
@@ -48,13 +49,14 @@ void SendDefaultMenu_teleporter(Player *player, Creature *_Creature, uint32 acti
     {
      player->CLOSE_GOSSIP_MENU();
      player->GetSession()->SendNotification("Beende den Kampf!");                                  
-    
+	   
 return;
     }
 
-switch(action)
 
+switch(action)
 {
+
 
 case 85: //Scherbenwelt
 
@@ -1211,8 +1213,9 @@ player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
 
 }
-
+}
 bool GossipSelect_teleporter(Player *player, Creature *_Creature, uint32
+
 
 sender, uint32 action )
 
