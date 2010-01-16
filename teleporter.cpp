@@ -17,6 +17,25 @@ coded for trinity*/
 http://easy-emu.de */
 
 
+
+bool ItemUse_teleporter(Player* pPlayer, Item* pItem, const SpellCastTargets &pTargets)
+{
+if ((pPlayer->isInCombat()) || (pPlayer->isInFlight()) || (pPlayer->isDead()))
+{
+      pPlayer->SendEquipError(EQUIP_ERR_NOT_IN_COMBAT, pItem, NULL);
+        return false;
+}
+if (pPlayer->IsMounted()) // Is player mounted
+{
+      pPlayer->SendEquipError(EQUIP_ERR_CANT_DO_RIGHT_NOW, pItem, NULL);
+        return true;
+}
+{
+      pPlayer->RemoveAllSpellCooldown();
+        return true;
+}
+}
+
 bool GossipHello_teleporter(Player *player, Creature *_Creature)
 {
     player->SetTaxiCheater(true);
@@ -1236,6 +1255,7 @@ newscript->Name="teleporter";
 newscript->pGossipHello = &GossipHello_teleporter;
 newscript->pGossipSelect = &GossipSelect_teleporter;
 newscript->pItemHello = NULL;
+newscript->pItemUse = &ItemUse_teleporter;
 newscript->pGOHello = NULL;
 newscript->pAreaTrigger = NULL;
 newscript->pItemQuestAccept = NULL;
