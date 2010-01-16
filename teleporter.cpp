@@ -50,7 +50,8 @@ player->ADD_GOSSIP_ITEM( 0, "Nordend" , GOSSIP_SENDER_MAIN, 84);
 player->ADD_GOSSIP_ITEM( 0, "Scherbenwelt" , GOSSIP_SENDER_MAIN, 85);
 player->ADD_GOSSIP_ITEM( 0, "Azeroth" , GOSSIP_SENDER_MAIN, 86);
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
-player->ADD_GOSSIP_ITEM( 0, "Teleporter by Tornado, Updated by SNowi" , GOSSIP_SENDER_MAIN, 601);
+player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
+player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
 player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
 return true;
@@ -776,6 +777,20 @@ case 9:
 player->CLOSE_GOSSIP_MENU();
 player->GetSession()->SendNotification("Schoenen Tag noch.");
 
+break;
+
+case 601: 
+
+player->CLOSE_GOSSIP_MENU();
+player->GetSession()->SendNotification("Coded by Tornado");
+
+
+break;
+
+case 701: 
+
+player->CLOSE_GOSSIP_MENU();
+player->GetSession()->SendNotification("Danke an SNowi fuers hinzufuegen von tbc und Classic Ports.");
 
 break;
 
