@@ -18,7 +18,7 @@ http://easy-emu.de */
 
 
 
-bool ItemUse_teleporter(Player* pPlayer, Item* pItem, const SpellCastTargets &pTargets)
+/*bool ItemUse_teleporter(Player* pPlayer, Item* pItem, const SpellCastTargets &pTargets)
 {
 if ((pPlayer->isInCombat()) || (pPlayer->isInFlight()) || (pPlayer->isDead()))
 {
@@ -34,7 +34,7 @@ if (pPlayer->IsMounted()) // Is player mounted
       pPlayer->RemoveAllSpellCooldown();
         return true;
 }
-}
+}*/
 
 bool GossipHello_teleporter(Player *player, Creature *_Creature)
 {
@@ -49,6 +49,7 @@ player->ADD_GOSSIP_ITEM( 0, "Gurubashi Arena" , GOSSIP_SENDER_MAIN, 6);
 player->ADD_GOSSIP_ITEM( 0, "Nordend" , GOSSIP_SENDER_MAIN, 84);
 player->ADD_GOSSIP_ITEM( 0, "Scherbenwelt" , GOSSIP_SENDER_MAIN, 85);
 player->ADD_GOSSIP_ITEM( 0, "Azeroth" , GOSSIP_SENDER_MAIN, 86);
+player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
 player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
 player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
@@ -291,6 +292,12 @@ case 6: // Hier kommen jetzt die ganzen coords
 player->CLOSE_GOSSIP_MENU();
 player->TeleportTo(0, -13152.0f, 342.72f, 52.395f, 0.0f);
 
+break;
+
+case 702: //Cooldown Remover
+
+player->CLOSE_GOSSIP_MENU();
+player->RemoveAllSpellCooldown();
 
 
 break;
@@ -1270,7 +1277,7 @@ newscript->Name="teleporter";
 newscript->pGossipHello = &GossipHello_teleporter;
 newscript->pGossipSelect = &GossipSelect_teleporter;
 newscript->pItemHello = NULL;
-newscript->pItemUse = &ItemUse_teleporter;
+//newscript->pItemUse = &ItemUse_teleporter;
 newscript->pGOHello = NULL;
 newscript->pAreaTrigger = NULL;
 newscript->pItemQuestAccept = NULL;
