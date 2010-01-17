@@ -301,6 +301,12 @@ case 702: //Cooldown Remover
 player->CLOSE_GOSSIP_MENU();
 player->RemoveAllSpellCooldown();
 
+break;
+
+case 703: // Nachwirkungen entfernen
+
+player->removeSpell(15007);
+player->CLOSE_GOSSIP_MENU();
 
 break;
 
@@ -1251,6 +1257,7 @@ player->ADD_GOSSIP_ITEM( 5, "Scherbenwelt Raids" , GOSSIP_SENDER_MAIN, 5);
 player->ADD_GOSSIP_ITEM( 5, "Gurubashi Arena" , GOSSIP_SENDER_MAIN, 6);
 player->ADD_GOSSIP_ITEM( 5, "Nordend" , GOSSIP_SENDER_MAIN, 84);
 player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
+player->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen" , GOSSIP_SENDER_MAIN, 703);
 player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
 player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
