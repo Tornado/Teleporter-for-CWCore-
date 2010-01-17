@@ -65,7 +65,9 @@ return true;
 void SendDefaultMenu_teleporter(Player *player, Creature *_Creature, uint32 action )
 {
      // Wenn der Spieler in einen Kampf verwickelt wird.
-	if(!player->getAttackers().empty())
+	//if(!player->getAttackers().empty())
+	//Found a better solution
+	if ((player->isInCombat()) || (player->isInFlight()) || (player->isDead()))
 
     {
      player->CLOSE_GOSSIP_MENU();
