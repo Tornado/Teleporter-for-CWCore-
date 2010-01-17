@@ -49,10 +49,10 @@ player->ADD_GOSSIP_ITEM( 0, "Gurubashi Arena" , GOSSIP_SENDER_MAIN, 6);
 player->ADD_GOSSIP_ITEM( 0, "Nordend" , GOSSIP_SENDER_MAIN, 84);
 player->ADD_GOSSIP_ITEM( 0, "Scherbenwelt" , GOSSIP_SENDER_MAIN, 85);
 player->ADD_GOSSIP_ITEM( 0, "Azeroth" , GOSSIP_SENDER_MAIN, 86);
-player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
+//player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
-player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
-player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
+//player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
+//player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
 player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
 return true;
@@ -1250,7 +1250,9 @@ player->ADD_GOSSIP_ITEM( 5, "Scherbenwelt Instanzen" , GOSSIP_SENDER_MAIN, 4);
 player->ADD_GOSSIP_ITEM( 5, "Scherbenwelt Raids" , GOSSIP_SENDER_MAIN, 5);
 player->ADD_GOSSIP_ITEM( 5, "Gurubashi Arena" , GOSSIP_SENDER_MAIN, 6);
 player->ADD_GOSSIP_ITEM( 5, "Nordend" , GOSSIP_SENDER_MAIN, 84);
-
+player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
+player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
+player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
 player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
