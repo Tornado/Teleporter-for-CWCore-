@@ -1256,13 +1256,22 @@ player->ADD_GOSSIP_ITEM( 5, "Scherbenwelt Instanzen" , GOSSIP_SENDER_MAIN, 4);
 player->ADD_GOSSIP_ITEM( 5, "Scherbenwelt Raids" , GOSSIP_SENDER_MAIN, 5);
 player->ADD_GOSSIP_ITEM( 5, "Gurubashi Arena" , GOSSIP_SENDER_MAIN, 6);
 player->ADD_GOSSIP_ITEM( 5, "Nordend" , GOSSIP_SENDER_MAIN, 84);
-player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
-player->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen" , GOSSIP_SENDER_MAIN, 703);
+player->ADD_GOSSIP_ITEM( 5, "Extras" , GOSSIP_SENDER_MAIN, 704);
+//player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
+//player->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen" , GOSSIP_SENDER_MAIN, 703);
 player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
 player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
 player->ADD_GOSSIP_ITEM( 0, "Schoenen Tag noch!" , GOSSIP_SENDER_MAIN, 9);
 player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
+break;
+
+case 704:
+
+player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
+player->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen" , GOSSIP_SENDER_MAIN, 703);
+player->ADD_GOSSIP_ITEM( 0, "[Hauptmenu]", GOSSIP_SENDER_MAIN, 200);
+player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
 }
 }
