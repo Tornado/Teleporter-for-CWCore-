@@ -1,7 +1,7 @@
-#include "GossipDef.h"
-#include "Player.h"
+//#include "GossipDef.h" | for Trinity
+//#include "Player.h" | for Trinity
 #include "precompiled.h"
-#include "sc_gossip.h"
+//#include "sc_gossip.h" | for Trinity
 
 // Grundversion Coded by Tornado
 // Scherbenwelt + Azeroth Coded by SNowi
