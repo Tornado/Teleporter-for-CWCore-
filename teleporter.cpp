@@ -1264,10 +1264,69 @@ player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 
 break;
 
+	//uint16 display_id;
+	//float display_id;
+    //float select = urand(0, 9);
+        case 1000: 
+			player->SetDisplayId(6374);
+            break;
+        case 1001: 
+			player->SetDisplayId(16358);
+            break;
+        case 1002: 
+			player->SetDisplayId(28010);
+            break;
+        case 1003: 
+			player->SetDisplayId(20521);
+            break;
+        case 1004: 
+			player->SetDisplayId(19913);
+            break;
+        case 1005: 
+			player->SetDisplayId(14521);
+            break;
+        case 1006: 
+			player->SetDisplayId(21371);
+            break;
+        case 1007: 
+			player->SetDisplayId(5240);
+            break;
+        case 1008: 
+			player->SetDisplayId(24564);
+            break;
+        case 1009: 
+			player->SetDisplayId(18417);
+
+
+break;
+
+		case 708:
+			player->ADD_GOSSIP_ITEM( 0, "Morph 1" , GOSSIP_SENDER_MAIN, 1000);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 2" , GOSSIP_SENDER_MAIN, 1001);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 3" , GOSSIP_SENDER_MAIN, 1002);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 4" , GOSSIP_SENDER_MAIN, 1003);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 5" , GOSSIP_SENDER_MAIN, 1004);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 6" , GOSSIP_SENDER_MAIN, 1005);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 7" , GOSSIP_SENDER_MAIN, 1006);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 8" , GOSSIP_SENDER_MAIN, 1007);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 9" , GOSSIP_SENDER_MAIN, 1008);
+			player->ADD_GOSSIP_ITEM( 0, "Morph 10" , GOSSIP_SENDER_MAIN, 1009);
+			player->ADD_GOSSIP_ITEM( 0, "[Hauptmenu]", GOSSIP_SENDER_MAIN, 200);
+
+
+break;
+
+case 709:
+    // (player->GetDisplayId() != player->GetNativeDisplayId())
+        player->DeMorph();
+break;
+
 case 704:
 
 player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
 player->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen" , GOSSIP_SENDER_MAIN, 703);
+player->ADD_GOSSIP_ITEM( 0, "Morph" , GOSSIP_SENDER_MAIN, 708);
+player->ADD_GOSSIP_ITEM( 0, "DeMorph" , GOSSIP_SENDER_MAIN, 709);
 player->ADD_GOSSIP_ITEM( 0, "Thanks" , GOSSIP_SENDER_MAIN, 701);
 player->ADD_GOSSIP_ITEM( 0, "Credits" , GOSSIP_SENDER_MAIN, 601);
 player->ADD_GOSSIP_ITEM( 0, "[Hauptmenu]", GOSSIP_SENDER_MAIN, 200);
@@ -1276,18 +1335,19 @@ player->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE,_Creature->GetGUID());
 }
 }
 bool GossipSelect_teleporter(Player *player, Creature *_Creature, uint32
+	
 
-
-sender, uint32 action )
+sender, uint32 action)
 
 {
 // Der Teleporter selbst
 if (sender == GOSSIP_SENDER_MAIN)
-SendDefaultMenu_teleporter(player, _Creature, action   );
+SendDefaultMenu_teleporter(player, _Creature, action);
 
 return true;
-
 }
+
+
 void AddSC_teleporter()
 {
     Script *newscript;
