@@ -803,7 +803,7 @@ break;
 case 701: 
 
 player->CLOSE_GOSSIP_MENU();
-player->GetSession()->SendNotification("Danke an SNowi fuers hinzufuegen von tbc und Classic Ports.");
+player->GetSession()->SendNotification("Danke an SNowi fuers hinzufuegen von Classic und tbc Ports.");
 
 break;
 
@@ -1313,7 +1313,6 @@ break;
 			player->ADD_GOSSIP_ITEM( 0, "Morph 10" , GOSSIP_SENDER_MAIN, 1009);
 			player->ADD_GOSSIP_ITEM( 0, "[Hauptmenu]", GOSSIP_SENDER_MAIN, 200);
 
-
 break;
 
 case 709:
@@ -1323,7 +1322,7 @@ break;
 
 case 704:
 
-player->ADD_GOSSIP_ITEM( 0, "Cooldown Remove" , GOSSIP_SENDER_MAIN, 702);
+player->ADD_GOSSIP_ITEM( 0, "Remove Cooldown" , GOSSIP_SENDER_MAIN, 702);
 player->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen" , GOSSIP_SENDER_MAIN, 703);
 player->ADD_GOSSIP_ITEM( 0, "Morph" , GOSSIP_SENDER_MAIN, 708);
 player->ADD_GOSSIP_ITEM( 0, "DeMorph" , GOSSIP_SENDER_MAIN, 709);
