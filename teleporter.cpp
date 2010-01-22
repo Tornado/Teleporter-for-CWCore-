@@ -1,6 +1,6 @@
 #include "precompiled.h"
 
-//Copyright (c) by Tornado and the Easy-Emu team.
+/* Copyright (c) 2010 Tornado & Easy-Emu team <http://easy-emu.de> */
 
 /*Report the Bugs pls under
 http://easy-emu.de */
