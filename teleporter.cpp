@@ -37,13 +37,18 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 	{
 	// When a player go into a fight.
 	//if (!plr->getAttackers().empty())
-	//ToDo: Forun a better solution
-	if ((plr->isInCombat()) || (plr->isInFlight()) || (plr->isDead()))
-		{
-		plr->CLOSE_GOSSIP_MENU();
-		plr->GetSession()->SendNotification("Finish the fight!");                                  
-		return;
-		}
+	//better solution
+	if (plr->isInCombat() || plr->isInFlight())
+	{
+	plr->CLOSE_GOSSIP_MENU();
+	plr->GetSession()->SendNotification("Finish the fight!");
+	}
+	
+	if (plr->isDead())
+	{
+	plr->CLOSE_GOSSIP_MENU();
+	plr->GetSession()->SendNotification("You are dead!");
+	}
 
 	switch(action)
 		{
