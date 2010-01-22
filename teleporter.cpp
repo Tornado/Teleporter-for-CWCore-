@@ -1,14 +1,6 @@
 #include "precompiled.h"
 
-// Grundversion Coded by Tornado
-// Scherbenwelt + Azeroth Coded by SNowi
-// All WOTLK Teleports
-// Umgeschrieben fuer Trinity!
-
-/*English: ground coded by tornado
-tbc and classic added by SNowi
-All wotlk ports added by tornado
-coded for trinity*/
+//Copyright (c) by Tornado and the Easy-Emu team.
 
 /*Report the Bugs pls under
 http://easy-emu.de */
