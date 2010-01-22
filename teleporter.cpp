@@ -849,7 +849,7 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 			plr->ADD_GOSSIP_ITEM(5, "Outland Raids", GOSSIP_SENDER_MAIN, 5);
 			plr->ADD_GOSSIP_ITEM(5, "Gurubashi Arena", GOSSIP_SENDER_MAIN, 6);
 			plr->ADD_GOSSIP_ITEM(5, "Northrend", GOSSIP_SENDER_MAIN, 84);
-			//plr->ADD_GOSSIP_ITEM( 5, "Extras", GOSSIP_SENDER_MAIN, 704);
+			plr->ADD_GOSSIP_ITEM( 5, "Extras", GOSSIP_SENDER_MAIN, 704);
 			//plr->ADD_GOSSIP_ITEM( 0, "Cooldown Remove", GOSSIP_SENDER_MAIN, 702);
 			//plr->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen", GOSSIP_SENDER_MAIN, 703);
 			//plr->ADD_GOSSIP_ITEM( 0, "Thanks", GOSSIP_SENDER_MAIN, 701);
