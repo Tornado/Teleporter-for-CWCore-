@@ -18,7 +18,7 @@ bool GossipHello_teleporter(Player *plr, Creature *_Creature)
 	plr->ADD_GOSSIP_ITEM(0, "Northrend", GOSSIP_SENDER_MAIN, 84);
 	plr->ADD_GOSSIP_ITEM(0, "Outland", GOSSIP_SENDER_MAIN, 85);
 	plr->ADD_GOSSIP_ITEM(0, "Azeroth", GOSSIP_SENDER_MAIN, 86);
-	plr->ADD_GOSSIP_ITEM(5, "Toold", GOSSIP_SENDER_MAIN, 704);
+	plr->ADD_GOSSIP_ITEM(5, "Tools", GOSSIP_SENDER_MAIN, 704);
 	plr->ADD_GOSSIP_ITEM(0, "Have a nice day!", GOSSIP_SENDER_MAIN, 9);
 	plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
 
