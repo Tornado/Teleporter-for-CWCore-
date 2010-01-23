@@ -851,7 +851,7 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 			plr->ADD_GOSSIP_ITEM(5, "Outland Raids", GOSSIP_SENDER_MAIN, 5);
 			plr->ADD_GOSSIP_ITEM(5, "Gurubashi Arena", GOSSIP_SENDER_MAIN, 6);
 			plr->ADD_GOSSIP_ITEM(5, "Northrend", GOSSIP_SENDER_MAIN, 84);
-			plr->ADD_GOSSIP_ITEM( 5, "Tools", GOSSIP_SENDER_MAIN, 704);
+			plr->ADD_GOSSIP_ITEM(5, "Tools", GOSSIP_SENDER_MAIN, 704);
 			//plr->ADD_GOSSIP_ITEM( 0, "Cooldown Remove", GOSSIP_SENDER_MAIN, 702);
 			//plr->ADD_GOSSIP_ITEM( 0, "Nachwirkungen entfernen", GOSSIP_SENDER_MAIN, 703);
 			//plr->ADD_GOSSIP_ITEM( 0, "Thanks", GOSSIP_SENDER_MAIN, 701);
@@ -860,14 +860,9 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 			plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
 			break;
 
-		/* Display ID's for morphing */
-			//uint16 display_id;
-			//float display_id;
-			//float select = urand(0, 9);
-
-			//ToDo: not working
-
-		/*case 1000: 
+		/* Morph system */
+		
+		case 1000: 
 			plr->SetDisplayId(6374);
 			break;
 
@@ -905,10 +900,9 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 
 		case 1009: 
 			plr->SetDisplayId(18417);
-			break;*/
+			break;
 
-
-		/*case 708:
+		case 708:
 			plr->ADD_GOSSIP_ITEM(0, "Morph 1", GOSSIP_SENDER_MAIN, 1000);
 			plr->ADD_GOSSIP_ITEM(0, "Morph 2", GOSSIP_SENDER_MAIN, 1001);
 			plr->ADD_GOSSIP_ITEM(0, "Morph 3", GOSSIP_SENDER_MAIN, 1002);
@@ -920,24 +914,25 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 			plr->ADD_GOSSIP_ITEM(0, "Morph 9", GOSSIP_SENDER_MAIN, 1008);
 			plr->ADD_GOSSIP_ITEM(0, "Morph 10", GOSSIP_SENDER_MAIN, 1009);
 			plr->ADD_GOSSIP_ITEM(0, "[Main Menu]", GOSSIP_SENDER_MAIN, 200);
-			break;*/
+			plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
+			break;
 
-			// Working
-		/*case 709:
+		case 709:
 			// (plr->GetDisplayId() != plr->GetNativeDisplayId())
 			plr->DeMorph();
-			break;*/
+			break;
 
 		case 704:
 			plr->ADD_GOSSIP_ITEM(0, "Remove Cooldown", GOSSIP_SENDER_MAIN, 702);
 			plr->ADD_GOSSIP_ITEM(0, "Remove Ripple Effect", GOSSIP_SENDER_MAIN, 703);
-			//plr->ADD_GOSSIP_ITEM(0, "Morph", GOSSIP_SENDER_MAIN, 708);
-			//plr->ADD_GOSSIP_ITEM(0, "DeMorph", GOSSIP_SENDER_MAIN, 709);
+			plr->ADD_GOSSIP_ITEM(0, "Morph", GOSSIP_SENDER_MAIN, 708);
+			plr->ADD_GOSSIP_ITEM(0, "DeMorph", GOSSIP_SENDER_MAIN, 709);
 			// Not needed option in menu. Thanks and credits are in these file
 			//plr->ADD_GOSSIP_ITEM(0, "Thanks", GOSSIP_SENDER_MAIN, 701);
 			//plr->ADD_GOSSIP_ITEM(0, "Credits", GOSSIP_SENDER_MAIN, 601);
 			plr->ADD_GOSSIP_ITEM(0, "[Main Menu]", GOSSIP_SENDER_MAIN, 200);
 			plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
+			break;
 		}
 	}
 	
