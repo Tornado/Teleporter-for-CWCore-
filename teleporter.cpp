@@ -1,9 +1,7 @@
+/* Copyright (C) 2010 Tornado & Easy-Emu Team <http://easy-emu.de>
+ * Report the Bugs on http://easy-emu.de */
+
 #include "precompiled.h"
-
-/* Copyright (c) 2010 Tornado & Easy-Emu team <http://easy-emu.de> */
-
-/*Report the Bugs pls under
-http://easy-emu.de */
 
 bool GossipHello_teleporter(Player *plr, Creature *_Creature)
 	{
@@ -27,20 +25,24 @@ bool GossipHello_teleporter(Player *plr, Creature *_Creature)
 
 void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 	{
-	// When a player go into a fight.
 	//if (!plr->getAttackers().empty())
 	//better solution
-	if (plr->isInCombat() || plr->isInFlight())
-	{
-	plr->CLOSE_GOSSIP_MENU();
-	plr->GetSession()->SendNotification("Finish the fight!");
-	}
-	
+
+	if (plr->isInCombat())
+		{
+		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are in combat!", LANG_UNIVERSAL, 0);
+		return;
+		}
+	if (plr->isInFlight())
+		{
+		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are in a battle!", LANG_UNIVERSAL, 0);
+		return;
+		}
 	if (plr->isDead())
-	{
-	plr->CLOSE_GOSSIP_MENU();
-	plr->GetSession()->SendNotification("You are dead!");
-	}
+		{
+		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are dead!", LANG_UNIVERSAL, 0);
+		return;
+		}
 
 	switch(action)
 		{
