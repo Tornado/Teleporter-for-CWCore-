@@ -5,6 +5,17 @@
 
 bool GossipHello_teleporter(Player *plr, Creature *_Creature)
 	{
+	if (plr->isInCombat())
+		{
+		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are in combat!", LANG_UNIVERSAL, 0);
+		return true;
+		}
+	if (plr->isInFlight())
+		{
+		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are in a battle!", LANG_UNIVERSAL, 0);
+		return true;
+		}
+
 	plr->SetTaxiCheater(true);
 
 	plr->ADD_GOSSIP_ITEM(0, "Capitals", GOSSIP_SENDER_MAIN, 1);
@@ -25,25 +36,6 @@ bool GossipHello_teleporter(Player *plr, Creature *_Creature)
 
 void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 	{
-	//if (!plr->getAttackers().empty())
-	//better solution
-
-	if (plr->isInCombat())
-		{
-		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are in combat!", LANG_UNIVERSAL, 0);
-		return;
-		}
-	if (plr->isInFlight())
-		{
-		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are in a battle!", LANG_UNIVERSAL, 0);
-		return;
-		}
-	if (plr->isDead())
-		{
-		plr->CLOSE_GOSSIP_MENU(), _Creature->MonsterSay("You are dead!", LANG_UNIVERSAL, 0);
-		return;
-		}
-
 	switch(action)
 		{
 		// Outland
