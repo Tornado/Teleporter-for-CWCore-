@@ -31,6 +31,31 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 	{
 	switch(action)
 		{
+		// Capitals
+		case 1:
+			if (plr->GetTeam() == ALLIANCE)
+				{
+				plr->ADD_GOSSIP_ITEM(5, "Stormwind", GOSSIP_SENDER_MAIN, 20);
+				plr->ADD_GOSSIP_ITEM(5, "Darnassus", GOSSIP_SENDER_MAIN, 21);
+				plr->ADD_GOSSIP_ITEM(5, "Ironforge", GOSSIP_SENDER_MAIN, 22);
+				plr->ADD_GOSSIP_ITEM(5, "Exodar", GOSSIP_SENDER_MAIN, 23);
+				plr->ADD_GOSSIP_ITEM(5, "Shattrath", GOSSIP_SENDER_MAIN, 24);
+				plr->ADD_GOSSIP_ITEM(5, "Dalaran", GOSSIP_SENDER_MAIN, 89);
+				plr->ADD_GOSSIP_ITEM(0, "Main Menu", GOSSIP_SENDER_MAIN, 200);
+				plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
+				}
+			else
+				{
+				plr->ADD_GOSSIP_ITEM(5, "Orgrimmar", GOSSIP_SENDER_MAIN, 25);
+				plr->ADD_GOSSIP_ITEM(5, "Thunder Bluff", GOSSIP_SENDER_MAIN, 26);
+				plr->ADD_GOSSIP_ITEM(5, "Undercity", GOSSIP_SENDER_MAIN, 27);
+				plr->ADD_GOSSIP_ITEM(5, "Silvermoon", GOSSIP_SENDER_MAIN, 28);
+				plr->ADD_GOSSIP_ITEM(5, "Shattrath", GOSSIP_SENDER_MAIN, 24);
+				plr->ADD_GOSSIP_ITEM(5, "Dalaran", GOSSIP_SENDER_MAIN, 89);
+				plr->ADD_GOSSIP_ITEM(0, "Main Menu", GOSSIP_SENDER_MAIN, 200);
+				plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
+				};
+
 		// Outland
 		case 85:
 			plr->ADD_GOSSIP_ITEM(5, "Hellfire Peninsula", GOSSIP_SENDER_MAIN, 300);
@@ -114,31 +139,6 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 			plr->ADD_GOSSIP_ITEM(5, "Winterspring", GOSSIP_SENDER_MAIN, 353);
 			plr->ADD_GOSSIP_ITEM(0, "[Main Menu]", GOSSIP_SENDER_MAIN, 200);
 			plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
-
-			// Capitals
-		case 1:
-			if (plr->GetTeam() == ALLIANCE)
-				{
-				plr->ADD_GOSSIP_ITEM(5, "Stormwind", GOSSIP_SENDER_MAIN, 20);
-				plr->ADD_GOSSIP_ITEM(5, "Darnassus", GOSSIP_SENDER_MAIN, 21);
-				plr->ADD_GOSSIP_ITEM(5, "Ironforge", GOSSIP_SENDER_MAIN, 22);
-				plr->ADD_GOSSIP_ITEM(5, "Exodar", GOSSIP_SENDER_MAIN, 23);
-				plr->ADD_GOSSIP_ITEM(5, "Shattrath", GOSSIP_SENDER_MAIN, 24);
-				plr->ADD_GOSSIP_ITEM(5, "Dalaran", GOSSIP_SENDER_MAIN, 89);
-				plr->ADD_GOSSIP_ITEM(0, "[Main Menu]", GOSSIP_SENDER_MAIN, 200);
-				plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
-				}
-			else
-				{
-				plr->ADD_GOSSIP_ITEM(5, "Orgrimmar", GOSSIP_SENDER_MAIN, 25);
-				plr->ADD_GOSSIP_ITEM(5, "Thunder Bluff", GOSSIP_SENDER_MAIN, 26);
-				plr->ADD_GOSSIP_ITEM(5, "Undercity", GOSSIP_SENDER_MAIN, 27);
-				plr->ADD_GOSSIP_ITEM(5, "Silvermoon", GOSSIP_SENDER_MAIN, 28);
-				plr->ADD_GOSSIP_ITEM(5, "Shattrath", GOSSIP_SENDER_MAIN, 24);
-				plr->ADD_GOSSIP_ITEM(5, "Dalaran", GOSSIP_SENDER_MAIN, 89);
-				plr->ADD_GOSSIP_ITEM(0, "[Main Menu]", GOSSIP_SENDER_MAIN, 200);
-				plr->SEND_GOSSIP_MENU(DEFAULT_GOSSIP_MESSAGE, _Creature->GetGUID());
-				};
 
 			// Azeroth-Instances
 		case 2:
@@ -521,6 +521,9 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 			plr->GetSession()->SendNotification("Danke an SNowi fuers hinzufuegen von Classic und tbc Ports.");
 			break;*/
 
+		/* Capitals */
+			
+			// Alliance
 		case 20:
 			plr->CLOSE_GOSSIP_MENU();
 			plr->TeleportTo(0, -8881.0f, 575.0f, 93.0f, 0.0f);
@@ -541,11 +544,13 @@ void SendDefaultMenu_teleporter(Player *plr, Creature *_Creature, uint32 action)
 			plr->TeleportTo(530,-4014.0f,-11895.79f,-2.0f,0.0f);
 			break;
 
+			// Shattrath
 		case 24:
 			plr->CLOSE_GOSSIP_MENU();
 			plr->TeleportTo(530, -1887.510010f, 5359.379883f, -12.427300f, 0.0f);
 			break;
 
+			// Horde
 		case 25:
 			plr->CLOSE_GOSSIP_MENU();
 			plr->TeleportTo(1, 1629.777344f, -4373.210449f, 31.246769, 0.0f);
@@ -938,13 +943,6 @@ void AddSC_teleporter()
 	newscript->Name="teleporter";
 	newscript->pGossipHello = &GossipHello_teleporter;
 	newscript->pGossipSelect = &GossipSelect_teleporter;
-	newscript->pItemHello = NULL;
-	//newscript->pItemUse = &ItemUse_teleporter;
-	newscript->pGOHello = NULL;
-	newscript->pAreaTrigger = NULL;
-	newscript->pItemQuestAccept = NULL;
-	newscript->pGOQuestAccept = NULL;
-	newscript->pGOChooseReward = NULL;
 	newscript->RegisterSelf();
 	}
 
